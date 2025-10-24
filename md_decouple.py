@@ -4,12 +4,11 @@ Advanced Markdown Line Processor
 Extracts code blocks from markdown files and saves them to appropriate file paths.
 """
 
-import os
 import re
 import argparse
 import sys
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List,   Optional
 import logging
 
 class AdvancedMarkdownProcessor:
@@ -331,7 +330,9 @@ def main():
     input_path = Path(args.input)
     
     if input_path.is_file():
-        success = processor.process_markdown_file(args.input)
+        if not processor.process_markdown_file(args.input):
+            print("process file fails")
+
     elif input_path.is_dir():
         processor.process_directory(args.input, args.pattern)
     else:

@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "telegram-bot-fastapi"
+version = "1.0.0"
+
+[tool.ruff]
+# ... (same as ruff.toml content above)
+
+[tool.mypy]
+# ... (same as mypy.ini content above)
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]

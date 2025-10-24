@@ -1,5 +1,4 @@
 import aiofiles
-import os
 from pathlib import Path
 
 CONTENT_DIR = Path(__file__).parent

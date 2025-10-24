@@ -1,6 +1,7 @@
-from app.config import logger
+from app.config import Settings, logger
+from aiogram import Bot
 
-async def setup_webhook(bot, settings):
+async def setup_webhook(bot:Bot, settings:Settings):
     """Setup webhook with comprehensive logging"""
     webhook_url = f"{settings.WEBHOOK_URL}{settings.WEBHOOK_PATH}"
     
@@ -33,7 +34,7 @@ async def setup_webhook(bot, settings):
         logger.error(f"Error setting up webhook: {e}")
         raise
 
-async def remove_webhook(bot, settings):
+async def remove_webhook(bot:Bot, settings:Settings):
     """Remove webhook with logging"""
     logger.info("Removing webhook...")
     
